@@ -1,0 +1,66 @@
+:root{
+  --primary-color: #4F45E4;
+}
+
+
+nav a{
+  font-size: 20px;
+  text-decoration: none !important;
+}
+/* Login Page */
+
+.bgImg{
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/839/original/pexels-fauxels-3184298.jpeg?1659740125");
+  background-size:cover;
+  height:100vh;
+  width: 100%; 
+}
+.bgOpacity{
+  background-color: rgb(255, 255, 255, 0.6);
+  height: 100vh;
+}
+.loginTitle, .signupTitle{
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center;
+  color: var(--primary-color);
+  
+}
+
+.loginForm{
+
+  padding: 10px;
+  border-radius: 4px;
+  color: var(--primary-color);
+
+}
+.signupForm{
+
+  padding: 10px;
+  border-radius: 4px;
+  color: var(--primary-color);
+}
+
+/* Profile Page */
+
+.profileTitle{
+  font-size: 35px;
+  color: var(--primary-color);
+  margin-top: 20px;
+}
+
+.profileSubtitle{
+  font-size: 25px;
+}
+
+/* Dashboard Page */
+
+.bg-black-alt  {
+  background:#191919;
+}
+.text-black-alt  {
+  color:#191919;
+}
+.border-black-alt {
+  border-color: #191919;
+}
