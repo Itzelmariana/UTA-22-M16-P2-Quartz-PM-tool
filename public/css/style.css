@@ -1,41 +1,37 @@
-:root{
-  --primary-color: #4F45E4;
+:root {
+  --primary-color: #4f45e4;
 }
 
-
-nav a{
+nav a {
   font-size: 20px;
   text-decoration: none !important;
 }
 /* Login Page */
 
-.bgImg{
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/839/original/pexels-fauxels-3184298.jpeg?1659740125");
-  background-size:cover;
-  height:100vh;
-  width: 100%; 
+.bgImg {
+  background-image: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/839/original/pexels-fauxels-3184298.jpeg?1659740125');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
-.bgOpacity{
+.bgOpacity {
   background-color: rgb(255, 255, 255, 0.6);
   height: 100vh;
 }
-.loginTitle, .signupTitle{
+.loginTitle,
+.signupTitle {
   font-size: 35px;
   font-weight: bolder;
   text-align: center;
   color: var(--primary-color);
-  
 }
 
-.loginForm{
-
+.loginForm {
   padding: 10px;
   border-radius: 4px;
   color: var(--primary-color);
-
 }
-.signupForm{
-
+.signupForm {
   padding: 10px;
   border-radius: 4px;
   color: var(--primary-color);
@@ -43,24 +39,39 @@ nav a{
 
 /* Profile Page */
 
-.profileTitle{
+.profileTitle {
   font-size: 35px;
   color: var(--primary-color);
   margin-top: 20px;
 }
 
-.profileSubtitle{
+.profileSubtitle {
   font-size: 25px;
 }
 
 /* Dashboard Page */
 
-.bg-black-alt  {
-  background:#191919;
+.bg-black-alt {
+  background: #191919;
 }
-.text-black-alt  {
-  color:#191919;
+.text-black-alt {
+  color: #191919;
 }
 .border-black-alt {
   border-color: #191919;
+}
+
+/* Projects Page */
+.projectCard {
+  background-color: rgb(248, 240, 251);
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 16px !important;
+  border-radius: 10px;
+}
+.projectCard p {
+  font-size: 16px !important;
+}
+.createdCard {
+  text-align: right;
 }

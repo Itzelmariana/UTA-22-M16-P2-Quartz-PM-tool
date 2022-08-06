@@ -1,17 +1,38 @@
-{{!-- {{#if projects.length}} --}}
-  {{!-- <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+<div class='container'>
+  <h2 class='profileTitle'>Projects</h2>
+  <!-- Loop over each object in the projects array -->
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+  {{#each projects as |project|}}
+    <div class='projectCard'>
+      <div>
+        <div class='row project'>
+          <div class='col-md-3'>
+            <h2>
+              <a href='/project/{{project.id}}'>{{project.name}}</a>
+            </h2>
+          </div>
+          <div class='col-md-2'>
+            <p>
+              <span for='img' aria-label='money'>💲</span>
+              <!-- Pass needed_funding value to the helper function -->
+              <span class='dollar-amount'>{{format_amount
+                  project.needed_funding
+                }}</span>
+
+            </p>
+          </div>
+
+          <div class='col-md-7'>
+            <p>
+              {{project.description}}
+            </p>
+          </div>
+        </div>
+        <div class='createdCard'>Created by
+          {{project.user.name}}
+          on
+          {{format_date project.date_created}}</div>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{!-- {{/if}} --}}
-  {{!-- <script src="./js/projects.js"></script> --}} 
+  {{/each}}
+</div>

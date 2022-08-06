@@ -1,61 +1,94 @@
-<div class="container">
-<div class="row">
-  <div class="col-auto">
-    <h2 class="profileTitle">Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h2 class="profileSubtitle">Create a New Project:</h2>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <input placeholder="Project name" class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <input placeholder="Budget" class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      
-      <div class="form-group">
-        <select  class="form-input"  id="project-funding" name="project-funding">
-          <option value="" disabled selected>Choose Status</option>
-          <option value="Early stages">Early Stages</option>
-          <option value="In progress">In progress</option>
-          <option value="Blocked">Blocked</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <textarea placeholder="Description" for="project-desc" class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="project-deadline">Deadline:</label>
-        <input  class="form-input" type="date" id="project-deadline" name="project-deadline" />
-      </div>
-      
-      <div class="form-group">
-        <button type="submit" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3 class="profileSubtitle">Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-auto'>
+      <h2 class='profileTitle'>Welcome, {{name}}!</h2>
     </div>
-    {{/each}}
   </div>
-  {{/if}}
-</div>
+
+  <div class='row mt-4'>
+    <div class='col-md-6'>
+      <h2 class='profileSubtitle'>Create a New Project:</h2>
+
+      <form class='form new-project-form'>
+        <div class='form-group'>
+          <input
+            placeholder='Project name'
+            class='form-input'
+            type='text'
+            id='project-name'
+            name='project-name'
+          />
+        </div>
+        <div class='form-group'>
+          <input
+            placeholder='needed_funding'
+            class='form-input'
+            type='number'
+            id='project-funding'
+            name='project-funding'
+          />
+        </div>
+
+        <div class='form-group'>
+          <select
+            class='form-input'
+            id='project-funding'
+            name='project-funding'
+          >
+            <option value='' disabled selected>Choose Status</option>
+            <option value='Early stages'>Early Stages</option>
+            <option value='In progress'>In progress</option>
+            <option value='Blocked'>Blocked</option>
+          </select>
+        </div>
+        <div class='form-group'>
+          <textarea
+            placeholder='Description'
+            for='project-desc'
+            class='form-input'
+            id='project-desc'
+            name='project-desc'
+          ></textarea>
+        </div>
+        <div class='form-group'>
+          <label for='project-deadline'>Deadline:</label>
+          <input
+            class='form-input'
+            type='date'
+            id='project-deadline'
+            name='project-deadline'
+          />
+        </div>
+
+        <div class='form-group'>
+          <button
+            type='submit'
+            class='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10'
+          >Create</button>
+        </div>
+      </form>
+    </div>
+
+    {{#if projects.length}}
+      <div class='col-md-6 project-list'>
+        <h3 class='profileSubtitle'>Current Projects:</h3>
+
+        {{#each projects as |project|}}
+          <div class='row mb-2'>
+            <div class='col-md-8'>
+              <h4><a href='/project/{{project.id}}'>{{project.name}}</a></h4>
+            </div>
+            <div class='col-md-4'>
+              <button
+                class='btn btn-sm btn-danger'
+                data-id='{{project.id}}'
+              >DELETE</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
 </div>
 
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>
