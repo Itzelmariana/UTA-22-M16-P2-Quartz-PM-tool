@@ -60,12 +60,7 @@ nav a {
   padding-left: 20px;
   padding-right: 20px;
 }
-.projectStatus {
-  color: #9ba3af !important;
-}
-.projectPriority {
-  color: #9ba3af !important;
-}
+
 .currentProjects {
   color: var(--primary-color);
   padding: 10px;
@@ -117,4 +112,17 @@ nav a {
 
 .updateBtn {
   font-size: 20px;
+}
+
+/* Project Id Page */
+.createdProject {
+  text-align: right;
+}
+.projectId {
+  border: 1px solid gray;
+  padding: 40px;
+  border-radius: 14px;
+}
+.customizedForm {
+  padding-left: 25px;
 }

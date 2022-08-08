@@ -23,12 +23,12 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    priority: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     deadline: {
       type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
+    priority: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     description: {
