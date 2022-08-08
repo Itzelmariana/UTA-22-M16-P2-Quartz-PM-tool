@@ -1,0 +1,97 @@
+<div class='container'>
+  <h2 class='profileTitle'>Projects</h2>
+
+  <div class='projectCardTitle'>
+    <div class='row project'>
+      <div class='col-md-2 t1 hidden lg:block'>
+        Project Name
+      </div>
+      <div class='col-md-1 t1 hidden lg:block'>
+        User
+      </div>
+      <div class='col-md-2 t1 hidden lg:block'>
+        Status
+      </div>
+      <div class='col-md-2 t1 hidden lg:block'>
+        Description
+      </div>
+      <div class='col-md-2 t1 hidden lg:block'>
+        Deadline
+      </div>
+      <div class='col-md-1 t1 hidden lg:block'>
+        Priority
+      </div>
+      <div class='col-md-1 t1 hidden lg:block'>
+        Budget
+      </div>
+      <div class='col-md-1 t1 hidden lg:block'>
+      </div>
+
+    </div>
+  </div>
+
+  {{#each projects as |project|}}
+    <div>
+      <div class='projectCard'>
+
+        <div class='row project'>
+          <div class='col-md-2' id='projectName' contenteditable='true'>
+
+            {{project.name}}
+
+          </div>
+          <div class='col-md-1' contenteditable='true'>
+
+            {{project.user.name}}
+
+          </div>
+          <div class='col-md-2' contenteditable='true'>
+
+            {{project.status}}
+
+          </div>
+          <div class='col-md-2' id='projectDescription' contenteditable='true'>
+
+            {{project.description}}
+
+          </div>
+          <div class='col-md-2' contenteditable='true' class='date'>
+
+            {{project.deadline}}
+
+          </div>
+          <div class='col-md-1' contenteditable='true'>
+
+            {{project.priority}}
+
+          </div>
+          <div class='col-md-1' contenteditable='true'>
+
+            💲
+            <span class='dollar-amount'>{{format_amount project.budget}}</span>
+
+          </div>
+          <div class='col-md-1'>
+            <button class='updateBtn' type='submit'>
+              🔄
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class='row'>
+
+        <div class='col-6'>
+          <div>Created on
+            {{format_date project.date_created}}</div>
+        </div>
+        <div class='col-6 createdCard'>
+          <a href='/project/{{project.id}}'>See more</a>
+        </div>
+
+      </div>
+    </div>
+
+  {{/each}}
+</div>

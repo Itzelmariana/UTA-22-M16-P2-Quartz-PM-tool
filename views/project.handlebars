@@ -1,14 +1,38 @@
-<div class='text-center'>
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for='img' aria-label='money'>💲</span>
-    <span class='dollar-amount'>{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class='btn btn-primary'>Fund this Project!</button>
-  </p>
+<div class='container mt-10'>
+  <div class='projectId' project-id='{{id}}'>
+    <h2 class='mt-2 mb-5 profileTitle'>{{name}}</h2>
+    <div class='row'>
+      <div class='col-6'>
+        <p>Owner: {{user.name}}</p>
+        <p>Status: {{status}}</p>
+        <p>Description: {{description}} </p>
+      </div>
+      <div class='col-6'>
+        <p>Priority: {{priority}}</p>
+        <p>Deadline: {{deadline}}</p>
+        <p>Budget: {{budget}}</p>
+      </div>
+    </div>
+
+    <p class='mt-5 createdProject'>Created on
+      {{format_date date_created}}</p>
+  </div>
+
+  <form class='row customizedForm' id='customizedForm'>
+
+    <div class='col-12'>
+      <textarea
+        placeholder='Leave a comment'
+        for='post-comment'
+        class='form-input'
+        id='commentText'
+        name='post-comment'
+        class='form-input w-100'
+      ></textarea>
+      <button class='btn btn-primary projectBtn addCommentBtn' type='submit'>
+        Add comment</button>
+    </div>
+  </form>
+
+  <section class='comments' id='comment-container'></section>
 </div>

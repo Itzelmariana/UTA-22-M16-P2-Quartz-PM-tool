@@ -1,17 +1,22 @@
 [
   {
-    "name": "test",
-    "email": "test@test.com",
+    "name": "Brian",
+    "email": "brian@quartz.com",
+    "password": "password"
+  },
+  {
+    "name": "Andrew",
+    "email": "andrew@quartz.com",
+    "password": "password"
+  },
+  {
+    "name": "Joel",
+    "email": "joel@quartz.com",
     "password": "password"
   },
   {
     "name": "Itzel",
-    "email": "itzel@email.com",
-    "password": "password"
-  },
-  {
-    "name": "name",
-    "email": "email@email.com",
+    "email": "itzel@quartz.com",
     "password": "password"
   }
 ]

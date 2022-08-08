@@ -6,6 +6,9 @@ nav a {
   font-size: 20px;
   text-decoration: none !important;
 }
+.myNav {
+  margin-left: 20px;
+}
 /* Login Page */
 
 .bgImg {
@@ -48,6 +51,32 @@ nav a {
 .profileSubtitle {
   font-size: 25px;
 }
+.projectDeadline {
+  border: 1px solid gray;
+  padding: 10px;
+  color: #9ba3af;
+  border-radius: 4px;
+  font-family: sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.projectStatus {
+  color: #9ba3af !important;
+}
+.projectPriority {
+  color: #9ba3af !important;
+}
+.currentProjects {
+  color: var(--primary-color);
+  padding: 10px;
+}
+.currentProjects a:hover {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
 
 /* Dashboard Page */
 
@@ -69,9 +98,23 @@ nav a {
   font-size: 16px !important;
   border-radius: 10px;
 }
-.projectCard p {
-  font-size: 16px !important;
-}
+
 .createdCard {
   text-align: right;
+}
+.projectCardTitle {
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+.t1 {
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 10px;
+}
+
+.updateBtn {
+  font-size: 20px;
 }

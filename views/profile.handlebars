@@ -6,7 +6,7 @@
   </div>
 
   <div class='row mt-4'>
-    <div class='col-md-6'>
+    <div class='col-md-7'>
       <h2 class='profileSubtitle'>Create a New Project:</h2>
 
       <form class='form new-project-form'>
@@ -21,25 +21,50 @@
         </div>
         <div class='form-group'>
           <input
-            placeholder='needed_funding'
+            placeholder='Budget'
             class='form-input'
             type='number'
-            id='project-funding'
-            name='project-funding'
+            id='project-budget'
+            name='budget'
           />
         </div>
 
         <div class='form-group'>
           <select
-            class='form-input'
-            id='project-funding'
-            name='project-funding'
+            class='form-input projectStatus'
+            id='project-status'
+            name='project-status'
           >
             <option value='' disabled selected>Choose Status</option>
             <option value='Early stages'>Early Stages</option>
             <option value='In progress'>In progress</option>
             <option value='Blocked'>Blocked</option>
+            <option value='Blocked'>Done</option>
           </select>
+        </div>
+        <div class='form-group'>
+          <label for='project-deadline'>Deadline:</label>
+          <input
+            name='date'
+            class='datepicker-input projectDeadline'
+            type='date'
+            {{! class='form-input'
+             }}
+            id='project-deadline'
+            name='project-deadline'
+          />
+          <div class='form-group'>
+            <select
+              class='form-input projectPriority'
+              id='project-priority'
+              name='project-priority'
+            >
+              <option value='' disabled selected>Priority</option>
+              <option value='Early stages'>High</option>
+              <option value='In progress'>Medium</option>
+              <option value='Blocked'>Low</option>
+            </select>
+          </div>
         </div>
         <div class='form-group'>
           <textarea
@@ -49,15 +74,6 @@
             id='project-desc'
             name='project-desc'
           ></textarea>
-        </div>
-        <div class='form-group'>
-          <label for='project-deadline'>Deadline:</label>
-          <input
-            class='form-input'
-            type='date'
-            id='project-deadline'
-            name='project-deadline'
-          />
         </div>
 
         <div class='form-group'>
@@ -70,13 +86,15 @@
     </div>
 
     {{#if projects.length}}
-      <div class='col-md-6 project-list'>
+      <div class='col-md-5 project-list'>
         <h3 class='profileSubtitle'>Current Projects:</h3>
 
         {{#each projects as |project|}}
           <div class='row mb-2'>
             <div class='col-md-8'>
-              <h4><a href='/project/{{project.id}}'>{{project.name}}</a></h4>
+              <h4 class='currentProjects'><a
+                  href='/project/{{project.id}}'
+                >{{project.name}}</a></h4>
             </div>
             <div class='col-md-4'>
               <button

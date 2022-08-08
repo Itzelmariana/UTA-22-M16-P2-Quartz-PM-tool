@@ -15,6 +15,22 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    budget: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    priority: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    deadline: {
+      type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
     description: {
       type: DataTypes.STRING,
     },
@@ -23,10 +39,7 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
