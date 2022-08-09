@@ -27,26 +27,20 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/team', async (req, res) => {
+router.put('/projects/:id', withAuth, async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    const modifData = await Project.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
     });
+    console.log(modifData);
+    if (!modifData) {
+      res.status(404).json({ message: 'No project found with this id!' });
+      return;
+    }
 
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('team', {
-      projects,
-      logged_in: req.session.logged_in,
-    });
+    res.status(200).json(modifData);
   } catch (err) {
     res.status(500).json(err);
   }
