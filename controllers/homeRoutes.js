@@ -90,6 +90,15 @@ router.get('/dashboard', async (req, res) => {
     res.render('dashboard', {
       projects,
       logged_in: req.session.logged_in,
+      totalProjects: projectData.length,
+      totalBudget: projectData
+        .map((project) => project.budget)
+        .reduce((previousSum, budget) => previousSum + budget, 0),
+      totalInprogress: projectData.filter(
+        (project) => project.status === 'In progress'
+      ).length,
+      totalDone: projectData.filter((project) => project.status === 'Done')
+        .length,
     });
   } catch (err) {
     res.status(500).json(err);
