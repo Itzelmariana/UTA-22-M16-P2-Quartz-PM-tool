@@ -85,7 +85,9 @@ router.get('/dashboard', async (req, res) => {
 
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
-
+    const userProjects = projectData.filter(
+      (project) => project.user_id == req.session.user_id
+    );
     // Pass serialized data and session flag into template
     res.render('dashboard', {
       projects,
@@ -98,6 +100,16 @@ router.get('/dashboard', async (req, res) => {
         (project) => project.status === 'In progress'
       ).length,
       totalDone: projectData.filter((project) => project.status === 'Done')
+        .length,
+      myTotalProjects: userProjects.length,
+
+      myTotalBudget: userProjects
+        .map((project) => project.budget)
+        .reduce((previousSum, budget) => previousSum + budget, 0),
+      myTotalInprogress: userProjects.filter(
+        (project) => project.status === 'In progress'
+      ).length,
+      myTotalDone: userProjects.filter((project) => project.status === 'Done')
         .length,
     });
   } catch (err) {

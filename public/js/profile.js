@@ -53,5 +53,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelectorAll('.project-list')
+  .forEach((el) => el.addEventListener('click', delButtonHandler));
