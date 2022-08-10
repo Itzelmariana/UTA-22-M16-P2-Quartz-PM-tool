@@ -87,7 +87,7 @@ nav a {
 
 /* Projects Page */
 .projectCard {
-  background-color: whitesmoke;
+  background-color: whitesmoke !important;
   padding: 20px;
   margin-top: 10px;
   font-size: 15px !important;
@@ -133,4 +133,15 @@ nav a {
 }
 .customizedForm {
   padding-left: 25px;
+}
+
+/* Dashboard Page */
+
+.globalStatus {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+.myStatus {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
 }

@@ -103,6 +103,13 @@ router.get('/dashboard', async (req, res) => {
         .length,
       myTotalProjects: userProjects.length,
 
+      totalEarlyStages: projectData.filter(
+        (project) => project.status === 'Early Stages'
+      ).length,
+      totalBlocked: projectData.filter(
+        (project) => project.status === 'Blocked'
+      ).length,
+
       myTotalBudget: userProjects
         .map((project) => project.budget)
         .reduce((previousSum, budget) => previousSum + budget, 0),
@@ -111,6 +118,12 @@ router.get('/dashboard', async (req, res) => {
       ).length,
       myTotalDone: userProjects.filter((project) => project.status === 'Done')
         .length,
+      myTotalEarlyStages: userProjects.filter(
+        (project) => project.status === 'Early Stages'
+      ).length,
+      myTotalBlocked: userProjects.filter(
+        (project) => project.status === 'Blocked'
+      ).length,
     });
   } catch (err) {
     res.status(500).json(err);
